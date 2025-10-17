@@ -8,18 +8,18 @@
     "wishButtonLabel": "Загадай желание",
     "playlist": {
       "buttonLabel": "Включить плейлист",
-      "note": "Небольшая подборка треков, которые напоминают тебя (можно заменить своими).",
+      "note": "Небольшая подборка треков, для тебя",
       "tracks": [
         {
-          "label": "Дыши глубже — Юля Паршута",
+          "label": "INSTASAMKA - BALANCE",
           "url": "https://www.youtube.com/watch?v=YznKrrB4BzE&list=RDEMk5O7DQntwQoJxE0-roLNXg&index=10"
         },
         {
-          "label": "Грёзы — Zivert",
+          "label": "INSTASAMKA - ЗА ДЕНЬГИ ДА",
           "url": "https://www.youtube.com/watch?v=rn-fGxWlnhM&list=RDrn-fGxWlnhM&start_radio=1"
         },
         {
-          "label": "Love Story — Taylor Swift",
+          "label": "ТАНЦУЙ!",
           "url": "https://www.youtube.com/watch?v=QAMFJSMQt-s&list=RDQAMFJSMQt-s&start_radio=1"
         }
       ]
@@ -66,20 +66,20 @@
       "type": "мечта",
       "title": "Верить в себя",
       "message": "Пускай внутри всегда звучит голос, что у тебя всё получится — потому что это правда.",
-      "image": null
+      "image": "assets/placeholders/photo-10.jpg"
     },
     {
       "type": "мечта",
       "title": "Наша такса",
       "message": "Скоро у нас дома будут маленькие лапки, хвост-метроном и фирменные тапки Juicy Couture в зубах.",
-      "image": "https://images.unsplash.com/photo-1583512603805-3cc6b41f3edb?auto=format&fit=crop&w=600&q=80",
+      "image": "assets/placeholders/taksa.jpg",
       "alt": "Пес-такса смотрит вверх (замени на своё фото таксы)."
     },
     {
       "type": "комплимент",
       "title": "Ты — красота",
       "message": "Оставайся такой красивой, сияющей и живой — твоя улыбка перепрошивает любой серый день.",
-      "image": null
+      "image": "assets/placeholders/photo-01.jpg"
     },
     {
       "type": "мечта",
@@ -91,7 +91,7 @@
       "type": "плейсхолдер",
       "title": "TODO: наше летнее приключение",
       "message": "TODO: опиши любой летний день, который хочется пересказать снова (например, поездку или прогулку).",
-      "image": "https://images.unsplash.com/photo-1521292270410-a8c8440fb0c1?auto=format&fit=crop&w=600&q=80",
+      "image": "assets/placeholders/summer-adventure.jpg",
       "alt": "Пара на пикнике летом (замени на собственное фото)."
     },
     {
@@ -104,7 +104,7 @@
       "type": "плейсхолдер",
       "title": "TODO: первое совместное путешествие",
       "message": "TODO: опиши поездку или мечту о путешествии, которое вы планируете.",
-      "image": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=600&q=80",
+      "image": "assets/placeholders/photo-03.jpg",
       "alt": "Дорога и горы (замени на фото из поездки)."
     },
     {
@@ -117,13 +117,13 @@
       "type": "плейсхолдер",
       "title": "TODO: воспоминание о Juicy Couture",
       "message": "TODO: расскажи про момент, когда ты подарил/купил что-то Juicy Couture или как она сияла в этом образе.",
-      "image": null
+      "image": "assets/placeholders/photo-09.jpg"
     },
     {
       "type": "плейсхолдер",
       "title": "TODO: уютный вечер",
       "message": "TODO: напиши про домашний вечер, который стал особенным.",
-      "image": "https://images.unsplash.com/photo-1549213783-8284d0336c83?auto=format&fit=crop&w=600&q=80",
+      "image": "assets/placeholders/cozy-evening.jpg",
       "alt": "Уютные огни и свечи (замени на свой кадр)."
     },
     {
