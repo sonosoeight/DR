@@ -114,7 +114,7 @@ function hydrateQuiz(content) {
     }
 
     selectors.quizContainer.innerHTML = '';
-    quiz.questions.forEach((question) => {
+    quiz.questions.forEach((question, index) => {
         const card = document.createElement('article');
         card.className = 'quiz-card';
 
@@ -122,11 +122,29 @@ function hydrateQuiz(content) {
         q.className = 'quiz-card__question';
         q.textContent = question.prompt;
 
+        const revealBtn = document.createElement('button');
+        revealBtn.type = 'button';
+        revealBtn.className = 'quiz-card__reveal';
+        revealBtn.textContent = 'Показать ответ';
+        revealBtn.dataset.quizIndex = index;
+
         const a = document.createElement('p');
         a.className = 'quiz-card__answer';
         a.textContent = question.answer;
+        a.hidden = true;
+
+        revealBtn.addEventListener('click', () => {
+            if (a.hidden) {
+                a.hidden = false;
+                revealBtn.textContent = 'Скрыть ответ';
+            } else {
+                a.hidden = true;
+                revealBtn.textContent = 'Показать ответ';
+            }
+        });
 
         card.appendChild(q);
+        card.appendChild(revealBtn);
         card.appendChild(a);
         selectors.quizContainer.appendChild(card);
     });
