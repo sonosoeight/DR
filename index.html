@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>С Днём рождения, Алина! | 23 созвездия</title>
+    <meta name="description" content="23 созвездия для Алины — тёплая мини-история с воспоминаниями, пожеланиями и мечтами.">
+    <meta name="theme-color" content="#f6d7d4">
+    <meta property="og:title" content="С Днём рождения, Алина!">
+    <meta property="og:description" content="23 созвездия воспоминаний, пожеланий и тёплых сюрпризов.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://example.com">
+    <meta property="og:image" content="https://dummyimage.com/1200x630/f7d9e3/333333&text=Happy+23,+Alina%21">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <script defer type="module" src="scripts/main.js"></script>
+</head>
+<body>
+    <noscript>Для полного эффекта включите JavaScript — так звёзды оживут ✨</noscript>
+    <main class="page">
+        <section class="hero" id="hero" aria-labelledby="hero-title">
+            <div class="hero__content">
+                <p class="hero__eyebrow" data-hero-eyebrow>23 созвездия любви</p>
+                <h1 class="hero__title" id="hero-title" data-hero-title>С Днём рождения, Алина!</h1>
+                <p class="hero__subtitle" data-hero-subtitle>Каждая звезда — это маленькая история о тебе.</p>
+                <div class="hero__actions">
+                    <button class="btn btn--primary" data-wish-button>Загадай желание</button>
+                    <button class="btn btn--ghost" data-playlist-button aria-expanded="false">
+                        <span data-playlist-label>Включить плейлист</span>
+                    </button>
+                </div>
+                <div class="playlist-panel" data-playlist-panel hidden>
+                    <p class="playlist-panel__note" data-playlist-note>Нажми на любую песню, чтобы открыть её.</p>
+                    <ul class="playlist-panel__list" data-playlist-list></ul>
+                </div>
+            </div>
+            <div class="hero__visual" aria-hidden="true">
+                <div class="orbit orbit--outer"></div>
+                <div class="orbit orbit--inner"></div>
+                <div class="shooting-star"></div>
+            </div>
+        </section>
+
+        <section class="constellations" id="constellations" aria-labelledby="constellations-title">
+            <header class="section-header">
+                <h2 class="section-header__title" id="constellations-title" data-constellations-title>23 созвездия</h2>
+                <p class="section-header__subtitle" data-constellations-subtitle>Кликни на любую звезду — внутри тёплое воспоминание или мечта.</p>
+                <button class="btn btn--outline" data-open-all>Финальный свет</button>
+            </header>
+            <div class="stars-grid" data-stars role="list"></div>
+            <aside class="memory-card" data-memory-panel hidden aria-live="polite">
+                <button class="memory-card__close" data-close-panel aria-label="Закрыть звёздную открытку">×</button>
+                <p class="memory-card__kicker" data-memory-type></p>
+                <h3 class="memory-card__title" data-memory-title></h3>
+                <p class="memory-card__message" data-memory-message></p>
+                <img class="memory-card__image" data-memory-image alt="" hidden>
+            </aside>
+        </section>
+
+        <section class="wishlist" id="wishlist" aria-labelledby="wishlist-title">
+            <div class="wishlist__inner">
+                <h2 class="wishlist__title" id="wishlist-title" data-wishlist-title>Наши мечты на горизонте</h2>
+                <p class="wishlist__text" data-wishlist-text>Пускай каждая мечта загорается отдельной искрой и ведёт нас к общему дому.</p>
+                <ul class="wishlist__list" data-wishlist-list></ul>
+            </div>
+        </section>
+
+        <section class="quiz" id="quiz" aria-labelledby="quiz-title">
+            <div class="quiz__inner">
+                <h2 class="quiz__title" id="quiz-title">Мини-викторина: насколько мы синхронны?</h2>
+                <p class="quiz__intro">Можешь мысленно ответить, а потом свериться с моими подсказками 💕</p>
+                <div class="quiz__questions" data-quiz></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p class="footer__love">С любовью и нетерпением — давай уже съедемся и заведём нашу таксу 🐾</p>
+        <p class="footer__note">Сайт создан специально для Алины. Все заглушки отмечены как TODO для лёгкого обновления.</p>
+    </footer>
+</body>
+</html>
