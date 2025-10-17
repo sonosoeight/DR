@@ -2,12 +2,12 @@
   <title>23 constellations</title>
   <defs>
     <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ffcde1" />
-      <stop offset="100%" stop-color="#ff8fb1" />
+      <stop offset="0%" stop-color="#e8dfd6" />
+      <stop offset="100%" stop-color="#c9a78a" />
     </linearGradient>
   </defs>
-  <rect width="64" height="64" rx="16" fill="#fff5f8" />
+  <rect width="64" height="64" rx="16" fill="#f5f0eb" />
   <path fill="url(#grad)" d="M32 6l5.4 14.8H53L39.8 30.3l5 15.1L32 36.9 17.2 45.4l5-15.1L11 20.8h15.7z" />
-  <circle cx="18" cy="14" r="3" fill="#ffb8d4" opacity="0.6" />
-  <circle cx="46" cy="19" r="2.4" fill="#ff9dbe" opacity="0.6" />
+  <circle cx="18" cy="14" r="3" fill="#d4c4b5" opacity="0.6" />
+  <circle cx="46" cy="19" r="2.4" fill="#b08968" opacity="0.6" />
 </svg>

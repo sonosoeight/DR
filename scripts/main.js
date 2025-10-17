@@ -402,7 +402,7 @@ function fireConfetti(options = {}) {
         particleCount: 90,
         spread: 65,
         origin: { y: 0.6 },
-        colors: ['#ff8fb1', '#ffe0f0', '#fdd3d5', '#f2a7b8'],
+        colors: ['#c9a78a', '#e8dfd6', '#d4c4b5', '#b08968'],
         scalar: 0.85,
         ...options
     });

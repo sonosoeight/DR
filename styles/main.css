@@ -1,22 +1,22 @@
 :root {
     --font-heading: "Playfair Display", serif;
     --font-body: "Manrope", "Segoe UI", sans-serif;
-    --color-bg: #fef8f3;
-    --color-hero: #f4d4cf;
-    --color-card: #ffffffee;
-    --color-text: #2b1a1a;
-    --color-muted: #775c5b;
-    --color-accent: #ff8fb1;
-    --color-accent-dark: #e66d96;
-    --color-outline: #d5b2ac;
-    --color-star-a: #ffd8df;
-    --color-star-b: #f7b7c1;
-    --shadow-soft: 0 16px 35px -25px rgba(119, 92, 91, 0.55);
-    --shadow-card: 0 25px 50px -30px rgba(190, 136, 147, 0.65);
-    --radius-large: 32px;
-    --radius-medium: 18px;
-    --radius-small: 12px;
-    --transition: 180ms ease;
+    --color-bg: #f5f0eb;
+    --color-hero: #e8dfd6;
+    --color-card: #fdfcfbf5;
+    --color-text: #3d3430;
+    --color-muted: #6b5e54;
+    --color-accent: #c9a78a;
+    --color-accent-dark: #b08968;
+    --color-outline: #d4c4b5;
+    --color-star-a: #e8dfd6;
+    --color-star-b: #d4c4b5;
+    --shadow-soft: 0 16px 35px -25px rgba(107, 94, 84, 0.3);
+    --shadow-card: 0 25px 50px -30px rgba(107, 94, 84, 0.4);
+    --radius-large: 24px;
+    --radius-medium: 16px;
+    --radius-small: 10px;
+    --transition: 200ms ease;
 }
 
 * {
@@ -26,8 +26,9 @@
 body {
     margin: 0;
     font-family: var(--font-body);
-    background: radial-gradient(circle at top, rgba(255, 203, 221, 0.3), transparent 55%),
-        linear-gradient(180deg, var(--color-bg) 0%, #fff2f6 100%);
+    background: 
+        linear-gradient(135deg, rgba(232, 223, 214, 0.15) 0%, transparent 45%),
+        linear-gradient(180deg, var(--color-bg) 0%, #ebe5df 100%);
     color: var(--color-text);
     min-height: 100vh;
     display: flex;
@@ -41,9 +42,10 @@ body::before {
     position: fixed;
     inset: 0;
     pointer-events: none;
-    background-image: radial-gradient(rgba(255, 255, 255, 0.35) 1px, transparent 1px);
-    background-size: 40px 40px;
-    opacity: 0.55;
+    background-image: 
+        url('data:image/svg+xml,<svg width="80" height="80" xmlns="http://www.w3.org/2000/svg"><path d="M20 50 Q25 45 30 50 Q35 55 40 50 Q45 45 50 50 Q55 55 60 50" stroke="%23d4c4b5" stroke-width="0.5" fill="none" opacity="0.15"/><ellipse cx="25" cy="35" rx="8" ry="5" fill="%23c9a78a" opacity="0.08"/><ellipse cx="55" cy="25" rx="6" ry="4" fill="%23b08968" opacity="0.08"/></svg>');
+    background-size: 80px 80px;
+    opacity: 0.35;
     z-index: -1;
 }
 
@@ -109,37 +111,39 @@ body::before {
 }
 
 .btn:focus-visible {
-    outline: 3px solid rgba(255, 143, 177, 0.45);
+    outline: 3px solid rgba(201, 167, 138, 0.5);
     outline-offset: 3px;
 }
 
 .btn--primary {
-    background: linear-gradient(135deg, var(--color-accent) 0%, #ffc2d1 100%);
-    color: #321b1c;
-    box-shadow: 0 18px 30px -18px rgba(255, 143, 177, 0.8);
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%);
+    color: #fdfcfb;
+    box-shadow: 0 12px 24px -16px rgba(176, 137, 104, 0.5);
 }
 
 .btn--primary:hover {
     transform: translateY(-2px);
+    box-shadow: 0 16px 32px -18px rgba(176, 137, 104, 0.65);
 }
 
 .btn--ghost {
-    background: rgba(255, 255, 255, 0.45);
+    background: rgba(253, 252, 251, 0.5);
     color: var(--color-muted);
-    border: 1px solid rgba(255, 255, 255, 0.65);
+    border: 1px solid rgba(212, 196, 181, 0.5);
     backdrop-filter: blur(6px);
 }
 
 .btn--ghost:hover {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(253, 252, 251, 0.85);
+    border-color: var(--color-accent);
 }
 
 .btn--active {
-    box-shadow: 0 22px 40px -20px rgba(255, 143, 177, 0.95);
+    box-shadow: 0 18px 36px -20px rgba(176, 137, 104, 0.75);
 }
 
 .btn--outline {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(253, 252, 251, 0.95);
     border: 1px solid var(--color-outline);
     color: var(--color-text);
 }
@@ -149,40 +153,34 @@ body::before {
     min-height: 340px;
     border-radius: var(--radius-large);
     background:
-        radial-gradient(circle at 20% 22%, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.05) 55%),
-        radial-gradient(circle at 82% 15%, rgba(255, 210, 240, 0.92) 0%, rgba(255, 210, 240, 0) 55%),
-        linear-gradient(135deg, #ffd7f0 0%, #ff9fd0 42%, #f36cb4 78%, #b688ff 100%);
+        url('data:image/svg+xml,<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg"><g opacity="0.12"><ellipse cx="60" cy="120" rx="35" ry="22" fill="%23b08968"/><ellipse cx="55" cy="115" rx="8" ry="5" fill="%233d3430"/><ellipse cx="68" cy="115" rx="8" ry="5" fill="%233d3430"/><path d="M45 125 Q60 130 75 125" stroke="%233d3430" stroke-width="2" fill="none"/><ellipse cx="30" cy="135" rx="15" ry="8" fill="%23b08968"/><ellipse cx="90" cy="135" rx="15" ry="8" fill="%23b08968"/><path d="M40 142 L25 150 M80 142 L95 150" stroke="%23b08968" stroke-width="3"/></g><g opacity="0.08" transform="translate(120, 30)"><ellipse cx="40" cy="90" rx="28" ry="18" fill="%23c9a78a"/><ellipse cx="37" cy="87" rx="6" ry="4" fill="%233d3430"/><ellipse cx="48" cy="87" rx="6" ry="4" fill="%233d3430"/><ellipse cx="20" cy="102" rx="12" ry="6" fill="%23c9a78a"/><ellipse cx="60" cy="102" rx="12" ry="6" fill="%23c9a78a"/></g></svg>') center / 400px auto no-repeat,
+        radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.6) 0%, transparent 55%),
+        linear-gradient(135deg, #f5ebe3 0%, #e8dfd6 50%, #d4c4b5 100%);
     overflow: hidden;
-    box-shadow: 0 35px 70px -45px rgba(210, 80, 140, 0.75);
+    box-shadow: 0 25px 60px -40px rgba(107, 94, 84, 0.5);
     isolation: isolate;
+    border: 1px solid rgba(212, 196, 181, 0.4);
 }
 
-.hero__visual::before,
-.hero__visual::after {
+.hero__visual::before {
     content: "";
     position: absolute;
     inset: -18%;
     border-radius: inherit;
     pointer-events: none;
-}
-
-.hero__visual::before {
-    background: radial-gradient(circle at 35% 40%, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0) 65%);
-    filter: blur(14px);
-    opacity: 0.85;
+    background: radial-gradient(circle at 40% 35%, rgba(255, 251, 245, 0.5), transparent 60%);
+    filter: blur(20px);
+    opacity: 0.7;
     transform: scale(1);
-    animation: glow 12s ease-in-out infinite;
+    animation: glow 15s ease-in-out infinite;
 }
 
 .hero__visual::after {
-    background-image:
-        radial-gradient(2px 2px at 18% 24%, rgba(255, 255, 255, 0.85), transparent),
-        radial-gradient(3px 3px at 68% 32%, rgba(255, 255, 255, 0.8), transparent),
-        radial-gradient(1.5px 1.5px at 46% 68%, rgba(255, 255, 255, 0.6), transparent),
-        radial-gradient(2.4px 2.4px at 85% 75%, rgba(255, 255, 255, 0.7), transparent);
-    animation: twinkle 9s linear infinite;
-    mix-blend-mode: screen;
-    opacity: 0.95;
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(180deg, transparent 0%, rgba(232, 223, 214, 0.2) 100%);
 }
 
 .orbit {
@@ -191,23 +189,23 @@ body::before {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 2px solid rgba(255, 255, 255, 0.55);
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 35%, rgba(255, 168, 214, 0.08) 70%, transparent 100%);
-    box-shadow: 0 0 25px rgba(255, 205, 231, 0.55), inset 0 0 18px rgba(255, 255, 255, 0.35);
-    animation: rotate 18s linear infinite, orbitPulse 6s ease-in-out infinite;
+    border: 1.5px dashed rgba(212, 196, 181, 0.4);
+    background: radial-gradient(circle, rgba(232, 223, 214, 0.15) 35%, transparent 70%);
+    box-shadow: 0 0 15px rgba(212, 196, 181, 0.25), inset 0 0 12px rgba(255, 251, 245, 0.2);
+    animation: rotate 24s linear infinite, orbitPulse 8s ease-in-out infinite;
 }
 
 .orbit::before {
     content: "";
     position: absolute;
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
-    background: radial-gradient(circle, #ffffff 0%, rgba(255, 145, 204, 0.15) 100%);
-    top: -6px;
+    background: radial-gradient(circle, #f5ebe3 0%, rgba(201, 167, 138, 0.4) 100%);
+    top: -5px;
     left: 50%;
     transform: translate(-50%, -50%);
-    box-shadow: 0 0 18px rgba(255, 158, 210, 0.8);
+    box-shadow: 0 0 12px rgba(201, 167, 138, 0.5);
 }
 
 .orbit--outer {
@@ -228,26 +226,26 @@ body::before {
 
 .shooting-star {
     position: absolute;
-    width: 220px;
-    height: 4px;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 194, 232, 0.9) 45%, rgba(236, 119, 200, 0) 100%);
-    top: 38%;
-    left: -45%;
+    width: 180px;
+    height: 3px;
+    background: linear-gradient(90deg, rgba(245, 235, 227, 0.9) 0%, rgba(212, 196, 181, 0.7) 45%, transparent 100%);
+    top: 35%;
+    left: -40%;
     transform: rotate(18deg);
-    animation: shoot 8s ease-in-out infinite;
-    box-shadow: 0 0 28px rgba(255, 143, 200, 0.65);
+    animation: shoot 10s ease-in-out infinite;
+    box-shadow: 0 0 18px rgba(201, 167, 138, 0.4);
 }
 
 .shooting-star::after {
     content: "";
     position: absolute;
-    right: -6px;
-    top: -5px;
-    width: 14px;
-    height: 14px;
+    right: -5px;
+    top: -4px;
+    width: 11px;
+    height: 11px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.95) 0%, rgba(255, 175, 226, 0) 70%);
-    box-shadow: 0 0 20px rgba(255, 180, 226, 0.9);
+    background: radial-gradient(circle, rgba(245, 235, 227, 0.95) 0%, rgba(212, 196, 181, 0) 70%);
+    box-shadow: 0 0 15px rgba(201, 167, 138, 0.6);
 }
 
 .playlist-panel {
@@ -277,8 +275,8 @@ body::before {
     gap: 0.5rem;
     padding: 0.75rem;
     border-radius: var(--radius-small);
-    background: rgba(255, 255, 255, 0.7);
-    border: 1px solid rgba(255, 143, 177, 0.2);
+    background: rgba(253, 252, 251, 0.85);
+    border: 1px solid rgba(212, 196, 181, 0.3);
 }
 
 .playlist-player__label {
@@ -355,16 +353,18 @@ body::before {
     width: 120px;
     aspect-ratio: 1;
     clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-    background: radial-gradient(circle at 30% 30%, #fff7f9 0%, var(--color-star-a) 55%, var(--color-star-b) 100%);
+    background: 
+        radial-gradient(circle at 30% 30%, rgba(255, 251, 245, 0.95) 0%, var(--color-star-a) 55%, var(--color-star-b) 100%);
     position: relative;
-    box-shadow: 0 18px 35px -18px rgba(255, 143, 177, 0.8);
+    box-shadow: 0 12px 28px -18px rgba(107, 94, 84, 0.4);
     cursor: pointer;
-    color: #6f3747;
+    color: var(--color-text);
     font-weight: 600;
     font-size: 1.35rem;
     display: grid;
     place-items: center;
     transition: transform var(--transition), box-shadow var(--transition);
+    border: 1px solid rgba(212, 196, 181, 0.3);
 }
 
 .star::after {
@@ -372,13 +372,14 @@ body::before {
     position: absolute;
     inset: 8%;
     border-radius: inherit;
-    border: 1px solid rgba(255, 255, 255, 0.55);
+    border: 1px solid rgba(201, 167, 138, 0.4);
     opacity: 0;
     transition: opacity var(--transition);
 }
 
 .star:hover {
     transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 16px 32px -20px rgba(176, 137, 104, 0.5);
 }
 
 .star:hover::after,
@@ -388,7 +389,8 @@ body::before {
 
 .star--active {
     transform: translateY(-6px) scale(1.04);
-    box-shadow: 0 28px 45px -25px rgba(255, 143, 177, 0.9);
+    box-shadow: 0 20px 38px -22px rgba(176, 137, 104, 0.6);
+    background: radial-gradient(circle at 30% 30%, rgba(255, 251, 245, 1) 0%, rgba(232, 223, 214, 0.95) 55%, var(--color-accent) 100%);
 }
 
 .memory-card {
@@ -411,8 +413,8 @@ body::before {
 
 .memory-card__close {
     justify-self: end;
-    background: rgba(255, 255, 255, 0.75);
-    border: 1px solid rgba(255, 143, 177, 0.4);
+    background: rgba(253, 252, 251, 0.9);
+    border: 1px solid rgba(212, 196, 181, 0.4);
     border-radius: 999px;
     width: 36px;
     height: 36px;
@@ -471,7 +473,7 @@ body::before {
     width: auto;
     height: auto;
     border-radius: calc(var(--radius-medium) - 6px);
-    background: #fff;
+    background: rgba(253, 252, 251, 0.5);
 }
 
 .memory-card__video {
@@ -484,10 +486,11 @@ body::before {
 }
 
 .wishlist__inner {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 202, 215, 0.35) 100%);
+    background: linear-gradient(180deg, rgba(253, 252, 251, 0.9) 0%, rgba(232, 223, 214, 0.5) 100%);
     border-radius: var(--radius-large);
     padding: clamp(2rem, 6vw, 3.5rem);
     box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(212, 196, 181, 0.3);
     display: grid;
     gap: 1.25rem;
 }
@@ -517,10 +520,11 @@ body::before {
 }
 
 .quiz__inner {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(253, 252, 251, 0.85);
     border-radius: var(--radius-large);
     padding: clamp(2rem, 6vw, 3rem);
     box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(212, 196, 181, 0.3);
     display: grid;
     gap: 1rem;
 }
@@ -538,8 +542,8 @@ body::before {
 .quiz-card {
     padding: 1.25rem;
     border-radius: var(--radius-medium);
-    border: 1px solid rgba(255, 143, 177, 0.3);
-    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(212, 196, 181, 0.4);
+    background: rgba(253, 252, 251, 0.8);
     display: grid;
     gap: 0.75rem;
 }
@@ -555,8 +559,8 @@ body::before {
     font-size: 0.9rem;
     padding: 0.5rem 1rem;
     border-radius: 999px;
-    border: 1px solid rgba(255, 143, 177, 0.4);
-    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(212, 196, 181, 0.4);
+    background: rgba(253, 252, 251, 0.9);
     color: var(--color-text);
     cursor: pointer;
     transition: background var(--transition), transform var(--transition);
@@ -665,8 +669,8 @@ body::before {
     line-height: 1.6;
     padding: 1rem;
     border-radius: var(--radius-medium);
-    border: 2px solid rgba(255, 143, 177, 0.35);
-    background: rgba(255, 255, 255, 0.85);
+    border: 2px solid rgba(212, 196, 181, 0.4);
+    background: rgba(253, 252, 251, 0.9);
     color: var(--color-text);
     resize: vertical;
     transition: border-color var(--transition), box-shadow var(--transition);
@@ -675,7 +679,7 @@ body::before {
 .wish-modal__textarea:focus {
     outline: none;
     border-color: var(--color-accent);
-    box-shadow: 0 0 0 3px rgba(255, 143, 177, 0.2);
+    box-shadow: 0 0 0 3px rgba(201, 167, 138, 0.25);
 }
 
 .wish-modal__textarea::placeholder {
@@ -746,10 +750,10 @@ body::before {
 @keyframes orbitPulse {
     0%,
     100% {
-        box-shadow: 0 0 25px rgba(255, 205, 231, 0.55), inset 0 0 18px rgba(255, 255, 255, 0.35);
+        box-shadow: 0 0 15px rgba(212, 196, 181, 0.25), inset 0 0 12px rgba(255, 251, 245, 0.2);
     }
     50% {
-        box-shadow: 0 0 42px rgba(255, 205, 231, 0.75), inset 0 0 24px rgba(255, 255, 255, 0.45);
+        box-shadow: 0 0 22px rgba(201, 167, 138, 0.35), inset 0 0 16px rgba(255, 251, 245, 0.3);
     }
 }
 
