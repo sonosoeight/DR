@@ -435,6 +435,10 @@ body::before {
     box-shadow: 0 18px 35px -28px rgba(190, 136, 147, 0.8);
 }
 
+.memory-card__media[hidden] {
+    display: none;
+}
+
 .memory-card__image,
 .memory-card__video {
     display: block;
