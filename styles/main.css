@@ -153,7 +153,6 @@ body::before {
     min-height: 340px;
     border-radius: var(--radius-large);
     background:
-        url('data:image/svg+xml,<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg"><g opacity="0.12"><ellipse cx="60" cy="120" rx="35" ry="22" fill="%23b08968"/><ellipse cx="55" cy="115" rx="8" ry="5" fill="%233d3430"/><ellipse cx="68" cy="115" rx="8" ry="5" fill="%233d3430"/><path d="M45 125 Q60 130 75 125" stroke="%233d3430" stroke-width="2" fill="none"/><ellipse cx="30" cy="135" rx="15" ry="8" fill="%23b08968"/><ellipse cx="90" cy="135" rx="15" ry="8" fill="%23b08968"/><path d="M40 142 L25 150 M80 142 L95 150" stroke="%23b08968" stroke-width="3"/></g><g opacity="0.08" transform="translate(120, 30)"><ellipse cx="40" cy="90" rx="28" ry="18" fill="%23c9a78a"/><ellipse cx="37" cy="87" rx="6" ry="4" fill="%233d3430"/><ellipse cx="48" cy="87" rx="6" ry="4" fill="%233d3430"/><ellipse cx="20" cy="102" rx="12" ry="6" fill="%23c9a78a"/><ellipse cx="60" cy="102" rx="12" ry="6" fill="%23c9a78a"/></g></svg>') center / 400px auto no-repeat,
         radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.6) 0%, transparent 55%),
         linear-gradient(135deg, #f5ebe3 0%, #e8dfd6 50%, #d4c4b5 100%);
     overflow: hidden;
