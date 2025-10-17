@@ -424,10 +424,14 @@ body::before {
 }
 
 .memory-card__image {
+    display: block;
     width: 100%;
+    height: auto;
     border-radius: var(--radius-medium);
-    object-fit: cover;
-    max-height: 260px;
+    background: rgba(255, 255, 255, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    box-shadow: 0 18px 35px -28px rgba(190, 136, 147, 0.8);
+    max-height: min(420px, 70vh);
 }
 
 .wishlist {
