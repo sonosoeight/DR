@@ -15,8 +15,6 @@ const selectors = {
     memoryTitle: document.querySelector('[data-memory-title]'),
     memoryMessage: document.querySelector('[data-memory-message]'),
     memoryMedia: document.querySelector('[data-memory-media]'),
-    memoryImage: document.querySelector('[data-memory-image]'),
-    memoryVideo: document.querySelector('[data-memory-video]'),
     openAllButton: document.querySelector('[data-open-all]'),
     constellationsTitle: document.querySelector('[data-constellations-title]'),
     constellationsSubtitle: document.querySelector('[data-constellations-subtitle]'),
@@ -197,38 +195,30 @@ function updateMedia(memory) {
     resetMedia();
 
     if (memory.image) {
-        selectors.memoryImage.src = memory.image;
-        selectors.memoryImage.alt = memory.alt ?? '';
-        selectors.memoryImage.hidden = false;
+        const img = document.createElement('img');
+        img.className = 'memory-card__image';
+        img.src = memory.image;
+        img.alt = memory.alt ?? '';
+        selectors.memoryMedia.appendChild(img);
         selectors.memoryMedia.hidden = false;
     } else if (memory.video) {
-        selectors.memoryVideo.src = memory.video;
+        const video = document.createElement('video');
+        video.className = 'memory-card__video';
+        video.src = memory.video;
+        video.controls = true;
+        video.playsinline = true;
+        video.preload = 'metadata';
         if (memory.poster) {
-            selectors.memoryVideo.setAttribute('poster', memory.poster);
-        } else {
-            selectors.memoryVideo.removeAttribute('poster');
+            video.poster = memory.poster;
         }
-        selectors.memoryVideo.hidden = false;
+        selectors.memoryMedia.appendChild(video);
         selectors.memoryMedia.hidden = false;
-        selectors.memoryVideo.load();
     }
 }
 
 function resetMedia() {
-    if (selectors.memoryVideo) {
-        selectors.memoryVideo.pause();
-        selectors.memoryVideo.removeAttribute('src');
-        selectors.memoryVideo.load();
-        selectors.memoryVideo.hidden = true;
-    }
-
-    if (selectors.memoryImage) {
-        selectors.memoryImage.hidden = true;
-        selectors.memoryImage.removeAttribute('src');
-        selectors.memoryImage.alt = '';
-    }
-
     if (selectors.memoryMedia) {
+        selectors.memoryMedia.innerHTML = '';
         selectors.memoryMedia.hidden = true;
     }
 }
