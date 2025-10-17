@@ -132,13 +132,13 @@
       "type": "воспоминание",
       "title": "Совместная традиция",
       "message": "Как мы вместе смотрим истории Иосифа",
-      "image": null
+      "image": "assets/placeholders/photo-22.jpg"
     },
     {
       "type": "пожелание",
       "title": "Смелая мечта",
       "message": "Уехать вместе в Америку.",
-      "image": null
+      "image": "assets/placeholders/photo-09.jpg"
     },
     {
       "type": "обещание",
