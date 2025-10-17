@@ -220,11 +220,96 @@ function attachEvents() {
 }
 
 function handleWishClick() {
-    fireConfetti();
-    selectors.wishButton.classList.add('btn--active');
+    openWishModal();
+}
+
+function openWishModal() {
+    const modal = document.createElement('div');
+    modal.className = 'wish-modal';
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-labelledby', 'wish-modal-title');
+    modal.setAttribute('aria-modal', 'true');
+
+    const overlay = document.createElement('div');
+    overlay.className = 'wish-modal__overlay';
+
+    const content = document.createElement('div');
+    content.className = 'wish-modal__content';
+
+    const title = document.createElement('h2');
+    title.id = 'wish-modal-title';
+    title.className = 'wish-modal__title';
+    title.textContent = 'Загадай своё желание ✨';
+
+    const instruction = document.createElement('p');
+    instruction.className = 'wish-modal__instruction';
+    instruction.textContent = 'Напиши своё самое заветное желание, и оно обязательно сбудется!';
+
+    const textarea = document.createElement('textarea');
+    textarea.className = 'wish-modal__textarea';
+    textarea.placeholder = 'Моё желание...';
+    textarea.rows = 4;
+    textarea.maxLength = 500;
+
+    const actions = document.createElement('div');
+    actions.className = 'wish-modal__actions';
+
+    const confirmBtn = document.createElement('button');
+    confirmBtn.type = 'button';
+    confirmBtn.className = 'btn btn--primary';
+    confirmBtn.textContent = 'Загадать';
+
+    const cancelBtn = document.createElement('button');
+    cancelBtn.type = 'button';
+    cancelBtn.className = 'btn btn--ghost';
+    cancelBtn.textContent = 'Отменить';
+
+    const closeModal = () => {
+        modal.classList.add('wish-modal--closing');
+        setTimeout(() => modal.remove(), 300);
+    };
+
+    confirmBtn.addEventListener('click', () => {
+        const wish = textarea.value.trim();
+        if (wish) {
+            fireConfetti();
+            selectors.wishButton.classList.add('btn--active');
+            setTimeout(() => {
+                selectors.wishButton.classList.remove('btn--active');
+            }, 800);
+            closeModal();
+        } else {
+            textarea.focus();
+            textarea.classList.add('wish-modal__textarea--shake');
+            setTimeout(() => textarea.classList.remove('wish-modal__textarea--shake'), 500);
+        }
+    });
+
+    cancelBtn.addEventListener('click', closeModal);
+    overlay.addEventListener('click', closeModal);
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeModal();
+        }
+    }, { once: true });
+
+    actions.appendChild(confirmBtn);
+    actions.appendChild(cancelBtn);
+
+    content.appendChild(title);
+    content.appendChild(instruction);
+    content.appendChild(textarea);
+    content.appendChild(actions);
+
+    modal.appendChild(overlay);
+    modal.appendChild(content);
+    document.body.appendChild(modal);
+
     setTimeout(() => {
-        selectors.wishButton.classList.remove('btn--active');
-    }, 800);
+        modal.classList.add('wish-modal--open');
+        textarea.focus();
+    }, 10);
 }
 
 function openMemory(index) {

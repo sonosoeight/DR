@@ -597,6 +597,115 @@ body::before {
     margin: 0;
 }
 
+.wish-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: grid;
+    place-items: center;
+    opacity: 0;
+    transition: opacity 300ms ease;
+}
+
+.wish-modal--open {
+    opacity: 1;
+}
+
+.wish-modal--closing {
+    opacity: 0;
+}
+
+.wish-modal__overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(43, 26, 26, 0.65);
+    backdrop-filter: blur(8px);
+}
+
+.wish-modal__content {
+    position: relative;
+    width: min(90vw, 480px);
+    max-height: 80vh;
+    overflow-y: auto;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 240, 245, 0.95) 100%);
+    border-radius: var(--radius-large);
+    padding: clamp(1.75rem, 5vw, 2.5rem);
+    box-shadow: 0 45px 90px -50px rgba(190, 80, 120, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    display: grid;
+    gap: 1.25rem;
+    transform: scale(0.95);
+    transition: transform 300ms ease;
+}
+
+.wish-modal--open .wish-modal__content {
+    transform: scale(1);
+}
+
+.wish-modal__title {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: clamp(1.65rem, 4vw, 2.2rem);
+    color: var(--color-text);
+    text-align: center;
+}
+
+.wish-modal__instruction {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-muted);
+    text-align: center;
+}
+
+.wish-modal__textarea {
+    width: 100%;
+    font-family: inherit;
+    font-size: 1rem;
+    line-height: 1.6;
+    padding: 1rem;
+    border-radius: var(--radius-medium);
+    border: 2px solid rgba(255, 143, 177, 0.35);
+    background: rgba(255, 255, 255, 0.85);
+    color: var(--color-text);
+    resize: vertical;
+    transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.wish-modal__textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(255, 143, 177, 0.2);
+}
+
+.wish-modal__textarea::placeholder {
+    color: var(--color-muted);
+    opacity: 0.6;
+}
+
+.wish-modal__textarea--shake {
+    animation: shake 400ms ease;
+}
+
+.wish-modal__actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-8px);
+    }
+    75% {
+        transform: translateX(8px);
+    }
+}
+
 @keyframes rotate {
     from {
         transform: translate(-50%, -50%) rotate(0deg);
