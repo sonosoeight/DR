@@ -14,7 +14,9 @@ const selectors = {
     memoryType: document.querySelector('[data-memory-type]'),
     memoryTitle: document.querySelector('[data-memory-title]'),
     memoryMessage: document.querySelector('[data-memory-message]'),
+    memoryMedia: document.querySelector('[data-memory-media]'),
     memoryImage: document.querySelector('[data-memory-image]'),
+    memoryVideo: document.querySelector('[data-memory-video]'),
     openAllButton: document.querySelector('[data-open-all]'),
     constellationsTitle: document.querySelector('[data-constellations-title]'),
     constellationsSubtitle: document.querySelector('[data-constellations-subtitle]'),
@@ -175,15 +177,7 @@ function openMemory(index) {
     selectors.memoryType.textContent = memory.type;
     selectors.memoryTitle.textContent = memory.title;
     selectors.memoryMessage.textContent = memory.message;
-
-    if (memory.image) {
-        selectors.memoryImage.src = memory.image;
-        selectors.memoryImage.alt = memory.alt ?? '';
-        selectors.memoryImage.hidden = false;
-    } else {
-        selectors.memoryImage.hidden = true;
-        selectors.memoryImage.removeAttribute('src');
-    }
+    updateMedia(memory);
 
     selectors.memoryPanel.hidden = false;
     selectors.memoryPanel.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -192,10 +186,51 @@ function openMemory(index) {
 }
 
 function closeMemory() {
+    resetMedia();
     selectors.memoryPanel.hidden = true;
     const activeBtn = selectors.starsGrid.querySelector('.star--active');
     activeBtn?.classList.remove('star--active');
     state.activeIndex = null;
+}
+
+function updateMedia(memory) {
+    resetMedia();
+
+    if (memory.image) {
+        selectors.memoryImage.src = memory.image;
+        selectors.memoryImage.alt = memory.alt ?? '';
+        selectors.memoryImage.hidden = false;
+        selectors.memoryMedia.hidden = false;
+    } else if (memory.video) {
+        selectors.memoryVideo.src = memory.video;
+        if (memory.poster) {
+            selectors.memoryVideo.setAttribute('poster', memory.poster);
+        } else {
+            selectors.memoryVideo.removeAttribute('poster');
+        }
+        selectors.memoryVideo.hidden = false;
+        selectors.memoryMedia.hidden = false;
+        selectors.memoryVideo.load();
+    }
+}
+
+function resetMedia() {
+    if (selectors.memoryVideo) {
+        selectors.memoryVideo.pause();
+        selectors.memoryVideo.removeAttribute('src');
+        selectors.memoryVideo.load();
+        selectors.memoryVideo.hidden = true;
+    }
+
+    if (selectors.memoryImage) {
+        selectors.memoryImage.hidden = true;
+        selectors.memoryImage.removeAttribute('src');
+        selectors.memoryImage.alt = '';
+    }
+
+    if (selectors.memoryMedia) {
+        selectors.memoryMedia.hidden = true;
+    }
 }
 
 function runFinale() {
