@@ -66,7 +66,7 @@
       "type": "мечта",
       "title": "Верить в себя",
       "message": "Пускай внутри всегда звучит голос, что у тебя всё получится, ведь это правда.",
-      "image": "assets/placeholders/photo-10.jpg"
+      "image": "assets/placeholders/photo-03.jpg"
     },
     {
       "type": "мечта",
@@ -84,7 +84,7 @@
       "type": "мечта",
       "title": "Жить вместе",
       "message": "Самое главное желание, наконец-то съехаться и любить друг друга не только на расстоянии.",
-      "image": null
+      "image": "assets/placeholders/photo-20.jpg"
     },
     {
       "type": "воспоминание",
@@ -96,7 +96,7 @@
       "type": "воспоминание",
       "title": "Наши глупые приколы",
       "message": "Как мы смеемся над всякой ерундой, по типу \"баранбек и так далее\".",
-      "image": "assets/placeholders/video-01.MOV"
+      "video": "assets/placeholders/video-01.MOV"
     },
     {
       "type": "воспоминание",
@@ -156,7 +156,7 @@
       "type": "пожелание",
       "title": "Танцуй!",
       "message": "Желаю тебе чаще танцевать и получать от этого удовольствие.",
-      "image": "assets/placeholders/video-02.MOV"
+      "video": "assets/placeholders/video-02.MOV"
     },
     {
       "type": "пожелание",
