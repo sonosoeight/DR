@@ -229,11 +229,37 @@ body::before {
     width: 180px;
     height: 3px;
     background: linear-gradient(90deg, rgba(245, 235, 227, 0.9) 0%, rgba(212, 196, 181, 0.7) 45%, transparent 100%);
-    top: 35%;
-    left: -40%;
     transform: rotate(18deg);
-    animation: shoot 10s ease-in-out infinite;
     box-shadow: 0 0 18px rgba(201, 167, 138, 0.4);
+}
+
+.shooting-star--1 {
+    top: 15%;
+    left: -40%;
+    animation: shoot 8s ease-in-out infinite;
+}
+
+.shooting-star--2 {
+    top: 45%;
+    left: -40%;
+    animation: shoot 11s ease-in-out 2s infinite;
+    opacity: 0.85;
+}
+
+.shooting-star--3 {
+    top: 65%;
+    left: -40%;
+    width: 160px;
+    animation: shoot 9s ease-in-out 5s infinite;
+    opacity: 0.75;
+}
+
+.shooting-star--4 {
+    top: 30%;
+    left: -40%;
+    width: 200px;
+    animation: shoot 12s ease-in-out 7s infinite;
+    opacity: 0.9;
 }
 
 .shooting-star::after {
