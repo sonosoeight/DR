@@ -64,14 +64,61 @@ function buildPlaylist(tracks = []) {
     selectors.playlistList.innerHTML = '';
     tracks.forEach((track, index) => {
         const item = document.createElement('li');
-        const link = document.createElement('a');
-        link.href = track.url;
-        link.target = '_blank';
-        link.rel = 'noopener noreferrer';
-        link.textContent = `${index + 1}. ${track.label}`;
-        item.appendChild(link);
+        
+        // Extract YouTube video ID from URL
+        const videoId = extractYouTubeId(track.url);
+        
+        if (videoId) {
+            const playerContainer = document.createElement('div');
+            playerContainer.className = 'playlist-player';
+            
+            const label = document.createElement('p');
+            label.className = 'playlist-player__label';
+            label.textContent = `${index + 1}. ${track.label}`;
+            
+            const iframe = document.createElement('iframe');
+            iframe.className = 'playlist-player__iframe';
+            iframe.src = `https://www.youtube.com/embed/${videoId}`;
+            iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+            iframe.allowFullscreen = true;
+            iframe.loading = 'lazy';
+            iframe.title = track.label;
+            
+            playerContainer.appendChild(label);
+            playerContainer.appendChild(iframe);
+            item.appendChild(playerContainer);
+        } else {
+            // Fallback to regular link if URL parsing fails
+            const link = document.createElement('a');
+            link.href = track.url;
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+            link.textContent = `${index + 1}. ${track.label}`;
+            item.appendChild(link);
+        }
+        
         selectors.playlistList.appendChild(item);
     });
+}
+
+function extractYouTubeId(url) {
+    if (!url) return null;
+    
+    // Match various YouTube URL formats
+    const patterns = [
+        /(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\s]+)/,
+        /youtube\.com\/embed\/([^&\s]+)/,
+        /youtube\.com\/v\/([^&\s]+)/
+    ];
+    
+    for (const pattern of patterns) {
+        const match = url.match(pattern);
+        if (match && match[1]) {
+            return match[1];
+        }
+    }
+    
+    return null;
 }
 
 function hydrateConstellations(content) {

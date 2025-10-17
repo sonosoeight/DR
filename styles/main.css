@@ -269,7 +269,31 @@ body::before {
     padding: 0;
     list-style: none;
     display: grid;
-    gap: 0.65rem;
+    gap: 1rem;
+}
+
+.playlist-player {
+    display: grid;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    border-radius: var(--radius-small);
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(255, 143, 177, 0.2);
+}
+
+.playlist-player__label {
+    margin: 0;
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--color-text);
+}
+
+.playlist-player__iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
+    border-radius: calc(var(--radius-small) - 4px);
+    background: #000;
 }
 
 .playlist-panel__list a {
